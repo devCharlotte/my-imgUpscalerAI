@@ -1,7 +1,7 @@
 async function upscaleImage() {
     const fileInput = document.getElementById("imageUpload");
     if (!fileInput.files.length) {
-        alert("이미지를 업로드하세요!");
+        alert("upload your img");
         return;
     }
 
