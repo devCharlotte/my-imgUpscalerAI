@@ -12,12 +12,23 @@
     <div class="container">
         <h1>my img upscaler AI by Joonhee</h1>
         <p>my upscaler</p>
-        <input type="file" id="imageUpload">
-        <button onclick="upscaleImage()">start</button>
+       <input type="file" id="imageUpload">
+        
+        <label for="scaleFactor">n</label>
+        <select id="scaleFactor">
+            <option value="2">x2</option>
+            <option value="3">x3</option>
+            <option value="4">x4</option>
+        </select>
+
+        <button onclick="upscaleImage()">run</button>
+
         <div class="output">
             <h3>output</h3>
             <img id="outputImage" src="" alt="업스케일된 이미지">
         </div>
+
+        <a id="downloadBtn" href="#" download="upscaled_image.png" style="display: none;">download</a>
     </div>
 </body>
 </html>
