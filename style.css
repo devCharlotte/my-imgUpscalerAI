@@ -1,17 +1,3 @@
-@font-face {
-    font-family: 'HakgyoansimNadeuriTTF-B';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-5@1.0/HakgyoansimNadeuriTTF-B.woff2') format('woff2');
-    font-weight: 700;
-    font-style: normal;
-}
-
-body {
-    font-family: 'HakgyoansimNadeuriTTF-B', Arial, sans-serif;
-    background: linear-gradient(120deg, #ff9a9e, #fad0c4);
-    text-align: center;
-    padding: 50px 10px;
-}
-
 .container {
     background: #fff;
     padding: 30px;
@@ -23,38 +9,7 @@ body {
     margin: auto;
 }
 
-h1 {
-    font-size: 2rem;
-    color: #333;
-    margin-bottom: 15px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-}
-
-p {
-    font-size: 1.2rem;
-    margin: 10px 0;
-    color: #555;
-}
-
-input {
-    font-family: inherit;
-    font-size: 1rem;
-    padding: 10px;
-    width: 80%;
-    margin: 15px 0;
-    border: 2px solid #ddd;
-    border-radius: 10px;
-    transition: all 0.3s ease;
-}
-
-input:focus {
-    outline: none;
-    border-color: #ff79c6;
-    box-shadow: 0 0 10px rgba(255, 121, 198, 0.6);
-}
-
 button {
-    font-family: inherit;
     font-size: 1rem;
     padding: 10px 20px;
     background-color: #ff79c6;
@@ -62,12 +17,10 @@ button {
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    transition: all 0.3s ease;
 }
 
 button:hover {
     background-color: #ff47b2;
-    box-shadow: 0 4px 10px rgba(255, 121, 198, 0.5);
 }
 
 .output {
@@ -77,5 +30,18 @@ button:hover {
 img {
     max-width: 100%;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#downloadBtn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+#downloadBtn:hover {
+    background: #218838;
 }
