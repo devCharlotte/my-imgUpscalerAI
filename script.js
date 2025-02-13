@@ -1,5 +1,8 @@
 async function upscaleImage() {
     const fileInput = document.getElementById("imageUpload");
+    const outputImage = document.getElementById("outputImage");
+    const downloadBtn = document.getElementById("downloadBtn");
+
     if (!fileInput.files.length) {
         alert("upload your img");
         return;
@@ -12,31 +15,57 @@ async function upscaleImage() {
         const img = new Image();
         img.src = reader.result;
         img.onload = async () => {
+            // 기존 이미지 캔버스 생성
             const canvas = document.createElement("canvas");
             const ctx = canvas.getContext("2d");
             canvas.width = img.width;
             canvas.height = img.height;
             ctx.drawImage(img, 0, 0);
-            
-            // ONNX model load
-            const session = await ort.InferenceSession.create("./models/esrgan.onnx");
-            const imageData = ctx.getImageData(0, 0, img.width, img.height);
-            const inputTensor = new ort.Tensor("float32", new Float32Array(imageData.data), [1, 3, img.height, img.width]);
 
-            // run  model
-            const results = await session.run({ input: inputTensor });
-            const outputData = results.output.data;
+            // ONNX 모델 로드
+            try {
+                console.log("start loding");
+                const session = await ort.InferenceSession.create("models/esrgan.onnx");
+                console.log("loding complete");
 
-            // output processing
-            const outputCanvas = document.createElement("canvas");
-            outputCanvas.width = img.width * 2;
-            outputCanvas.height = img.height * 2;
-            const outputCtx = outputCanvas.getContext("2d");
-            const outputImageData = outputCtx.createImageData(outputCanvas.width, outputCanvas.height);
-            outputImageData.data.set(outputData);
-            outputCtx.putImageData(outputImageData, 0, 0);
-            
-            document.getElementById("outputImage").src = outputCanvas.toDataURL();
+                const imageData = ctx.getImageData(0, 0, img.width, img.height);
+                const float32Array = new Float32Array(imageData.data.length);
+                
+                for (let i = 0; i < imageData.data.length; i++) {
+                    float32Array[i] = imageData.data[i] / 255.0; // 정규화
+                }
+
+                const inputTensor = new ort.Tensor("float32", float32Array, [1, 3, img.height, img.width]);
+                console.log("ready");
+
+                // 업스케일링 실행
+                console.log("run...);
+                const results = await session.run({ input: inputTensor });
+                console.log("complete!!");
+
+                const outputData = results.output.data;
+
+                // output img activation
+                const outputCanvas = document.createElement("canvas");
+                const outputCtx = outputCanvas.getContext("2d");
+                outputCanvas.width = img.width * 2;
+                outputCanvas.height = img.height * 2;
+
+                const outputImageData = outputCtx.createImageData(outputCanvas.width, outputCanvas.height);
+                for (let i = 0; i < outputData.length; i++) {
+                    outputImageData.data[i] = outputData[i] * 255;
+                }
+
+                outputCtx.putImageData(outputImageData, 0, 0);
+                outputImage.src = outputCanvas.toDataURL();
+                
+                // download btn activation
+                downloadBtn.href = outputCanvas.toDataURL();
+                downloadBtn.style.display = "block";
+            } catch (error) {
+                console.error("오류 발생:", error);
+                alert("sorry, error");
+            }
         };
     };
 
