@@ -1,34 +1,34 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>my img upscaler AI by Joonhee</title>
-    <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/onnxruntime-web/1.11.1/ort.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>my img upscaler AI by Joonhee</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/onnxruntime-web/1.11.1/ort.min.js"></script>
 </head>
 <body>
-    <div class="container">
-        <h1>my img upscaler AI by Joonhee</h1>
-        <p>my upscaler</p>
-       <input type="file" id="imageUpload">
-        
-        <label for="scaleFactor">n</label>
-        <select id="scaleFactor">
-            <option value="2">x2</option>
-            <option value="3">x3</option>
-            <option value="4">x4</option>
-        </select>
+  <div class="container">
+    <h1>my img upscaler AI by Joonhee</h1>
+    <p>my upscaler</p>
+    <input type="file" id="imageUpload">
 
-        <button onclick="upscaleImage()">run</button>
+    <label for="scaleFactor">Scale:</label>
+    <select id="scaleFactor">
+      <option value="2">x2</option>
+      <option value="3">x3</option>
+      <option value="4">x4</option>
+    </select>
 
-        <div class="output">
-            <h3>output</h3>
-            <img id="outputImage" src="" alt="업스케일된 이미지">
-        </div>
+    <button onclick="upscaleImage()">run</button>
 
-        <a id="downloadBtn" href="#" download="upscaled_image.png" style="display: none;">download</a>
+    <div class="output">
+      <h3>output</h3>
+      <img id="outputImage" src="" alt="output img">
     </div>
+
+    <a id="downloadBtn" href="#" download="upscaled_image.png" style="display: none;">download</a>
+  </div>
 </body>
 </html>
