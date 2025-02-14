@@ -4,14 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>my img upscaler AI by Joonhee</title>
+  
+  <!-- CSS 불러오기 -->
+  <link rel="stylesheet" href="style.css">
 
-  <!-- style.css 불러오기 -->
-  <link rel="stylesheet" href="style.css" />
-
-  <!-- onnxruntime-web 먼저 로드 (defer 없이) -->
+  <!-- onnxruntime-web 라이브러리를 CDN에서 먼저 로드 -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/onnxruntime-web/1.11.1/ort.min.js"></script>
-
-  <!-- 내 스크립트는 그 다음에 로드 -->
+  
+  <!-- 내 스크립트는 defer를 사용하여 나중에 실행 -->
   <script defer src="script.js"></script>
 </head>
 <body>
