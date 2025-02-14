@@ -11,7 +11,7 @@
 <body>
   <div class="container">
     <h1>my img upscaler AI by Joonhee</h1>
-    <p>my upscaler</p>
+    <p>Upload an image and choose a scale factor to upscale it using AI.</p>
     <input type="file" id="imageUpload">
 
     <label for="scaleFactor">Scale:</label>
@@ -21,14 +21,14 @@
       <option value="4">x4</option>
     </select>
 
-    <button onclick="upscaleImage()">run</button>
+    <button onclick="upscaleImage()">Run</button>
 
     <div class="output">
-      <h3>output</h3>
-      <img id="outputImage" src="" alt="output img">
+      <h3>Output</h3>
+      <img id="outputImage" src="" alt="Upscaled image">
     </div>
 
-    <a id="downloadBtn" href="#" download="upscaled_image.png" style="display: none;">download</a>
+    <a id="downloadBtn" href="#" download="upscaled_image.png" style="display: none;">Download</a>
   </div>
 </body>
 </html>
