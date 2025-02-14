@@ -1,3 +1,28 @@
+@font-face {
+  font-family: 'HakgyoansimNadeuriTTF-B';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-5@1.0/HakgyoansimNadeuriTTF-B.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+body {
+  font-family: 'HakgyoansimNadeuriTTF-B', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(120deg, #ff9a9e, #fad0c4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+h1 {
+  font-size: 3rem;
+  color: #333;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
 .container {
   background: #fff;
   padding: 30px;
@@ -6,21 +31,46 @@
   text-align: center;
   max-width: 400px;
   width: 90%;
-  margin: auto;
+}
+
+p {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  color: #555;
+}
+
+input {
+  font-family: inherit;
+  font-size: 1.2rem;
+  padding: 10px;
+  width: 70%;
+  margin: 15px 0;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: #ff79c6;
+  box-shadow: 0 0 10px rgba(255, 121, 198, 0.6);
 }
 
 button {
-  font-size: 1rem;
+  font-family: inherit;
+  font-size: 1.2rem;
   padding: 10px 20px;
   background-color: #ff79c6;
   color: white;
   border: none;
   border-radius: 10px;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 button:hover {
   background-color: #ff47b2;
+  box-shadow: 0 4px 10px rgba(255, 121, 198, 0.5);
 }
 
 .output {
