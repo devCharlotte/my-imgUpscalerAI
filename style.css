@@ -1,47 +1,47 @@
 .container {
-    background: #fff;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    max-width: 400px;
-    width: 90%;
-    margin: auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  margin: auto;
 }
 
 button {
-    font-size: 1rem;
-    padding: 10px 20px;
-    background-color: #ff79c6;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
+  font-size: 1rem;
+  padding: 10px 20px;
+  background-color: #ff79c6;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
 button:hover {
-    background-color: #ff47b2;
+  background-color: #ff47b2;
 }
 
 .output {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 img {
-    max-width: 100%;
-    border-radius: 10px;
+  max-width: 100%;
+  border-radius: 10px;
 }
 
 #downloadBtn {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 15px;
-    background: #28a745;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 15px;
+  background: #28a745;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
 }
 
 #downloadBtn:hover {
-    background: #218838;
+  background: #218838;
 }
