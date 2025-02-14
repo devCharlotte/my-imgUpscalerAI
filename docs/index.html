@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>my img upscaler AI by Joonhee</title>
 
-  <!-- 스타일 로드 -->
-  <link rel="stylesheet" href="style.css">
+  <!-- style.css 불러오기 -->
+  <link rel="stylesheet" href="style.css" />
 
-  <!-- ONNX Runtime Web 라이브러리를 먼저 로드 -->
+  <!-- onnxruntime-web 먼저 로드 (defer 없이) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/onnxruntime-web/1.11.1/ort.min.js"></script>
-  
-  <!-- 내 스크립트는 그 다음에 로드 (defer로 문서 파싱 후 실행) -->
+
+  <!-- 내 스크립트는 그 다음에 로드 -->
   <script defer src="script.js"></script>
 </head>
 <body>
   <div class="container">
     <h1>my img upscaler AI by Joonhee</h1>
-    <p>my upscaler</p>
+    <p>Upload an image and choose a scale factor to upscale it using AI.</p>
     <input type="file" id="imageUpload">
 
     <label for="scaleFactor">Scale:</label>
@@ -27,14 +27,14 @@
       <option value="4">x4</option>
     </select>
 
-    <button onclick="upscaleImage()">run</button>
+    <button onclick="upscaleImage()">Run</button>
 
     <div class="output">
-      <h3>output</h3>
-      <img id="outputImage" src="" alt="output img">
+      <h3>Output</h3>
+      <img id="outputImage" src="" alt="Upscaled image">
     </div>
 
-    <a id="downloadBtn" href="#" download="upscaled_image.png" style="display: none;">download</a>
+    <a id="downloadBtn" href="#" download="upscaled_image.png" style="display: none;">Download</a>
   </div>
 </body>
 </html>
