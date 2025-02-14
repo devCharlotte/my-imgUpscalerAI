@@ -16,13 +16,6 @@ body {
   height: 100vh;
 }
 
-h1 {
-  font-size: 3rem;
-  color: #333;
-  margin-bottom: 20px;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-}
-
 .container {
   background: #fff;
   padding: 30px;
@@ -31,6 +24,13 @@ h1 {
   text-align: center;
   max-width: 400px;
   width: 90%;
+}
+
+h1 {
+  font-size: 3rem;
+  color: #333;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 p {
